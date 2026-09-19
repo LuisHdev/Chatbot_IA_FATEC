@@ -1,6 +1,6 @@
-# Chatbot Especialista com Gemini — NexFlow Desk
+# Chatbot com Gemini — NexFlow Desk
 
-## 3. Visão geral
+## 1. Visão geral
 
 Este projeto implementa, em **Python no Google Colab**, um chatbot especialista para atendimento sobre um serviço fictício chamado **NexFlow Desk**.
 
@@ -22,7 +22,7 @@ O chatbot possui:
 
 ---
 
-## 4. Domínio escolhido
+## 2. Domínio escolhido
 
 O domínio adotado é o **NexFlow Desk**, um serviço fictício de suporte gerenciado para pequenas empresas.
 
@@ -49,7 +49,7 @@ Quando uma pergunta não puder ser respondida de forma segura usando somente a b
 
 ---
 
-## 5. Arquitetura simplificada
+## 3. Arquitetura simplificada
 
 O funcionamento pode ser representado da seguinte maneira:
 
@@ -81,7 +81,7 @@ Um ponto importante é que o **controle das três perguntas é feito pelo Python
 
 ---
 
-## 6. Tecnologias utilizadas
+## 4. Tecnologias utilizadas
 
 - **Python**
 - **Google Colab**
@@ -92,7 +92,7 @@ Um ponto importante é que o **controle das três perguntas é feito pelo Python
 
 ---
 
-## 7. Estrutura do projeto
+## 5. Estrutura do projeto
 
 A estrutura recomendada do repositório é:
 
@@ -118,9 +118,9 @@ chatbot_especialista_gemini/
 
 ---
 
-## 8. Configuração da API
+## 6. Configuração da API
 
-### 7.1. Criar a chave
+### 6.1. Criar a chave
 
 É necessário possuir uma chave de API para utilizar o Gemini.
 
@@ -130,7 +130,7 @@ A chave deve ser criada no ambiente de gerenciamento da API do Google/Gemini.
 
 ---
 
-## 9. Configuração do `.env`
+## 7. Configuração do `.env`
 
 O repositório deve possuir um arquivo:
 
@@ -180,7 +180,7 @@ isso significa que o arquivo selecionado não é o `.env` real esperado pelo có
 
 ---
 
-## 10. Como executar no Google Colab
+## 8. Como executar no Google Colab
 
 ### Passo 1 — Abrir o notebook
 
@@ -288,7 +288,7 @@ Você:
 
 ---
 
-## 11. Limite de três perguntas
+## 9. Limite de três perguntas
 
 O contador da conversa é controlado pelo Python:
 
@@ -329,7 +329,7 @@ Conversa encerrada após 3 perguntas.
 
 ---
 
-## 12. Nova conversa
+## 10. Nova conversa
 
 No Google Colab, as variáveis permanecem na memória enquanto o ambiente estiver ativo.
 
@@ -349,7 +349,7 @@ Não é necessário reiniciar o ambiente do Colab.
 
 ---
 
-## 13. Estratégia anti-alucinação
+## 11. Estratégia anti-alucinação
 
 A proteção principal está na instrução:
 
@@ -370,7 +370,7 @@ Isso permite testar o comportamento do chatbot diante de uma pergunta conhecida 
 
 ---
 
-## 14. Controle do modelo
+## 12. Controle do modelo
 
 A função principal utiliza:
 
@@ -404,98 +404,7 @@ Para o resumo, é utilizado um limite menor:
 max_output_tokens=500
 ```
 
----
-
-## 15. Roteiro de teste sugerido
-
-Para demonstrar o requisito principal do trabalho, recomenda-se utilizar três perguntas, combinando informações existentes e inexistentes na base.
-
-### Pergunta 1
-
-```text
-Como abro um chamado?
-```
-
-A resposta esperada deve apresentar o procedimento de abertura do chamado.
-
-### Pergunta 2
-
-```text
-Quais são as classificações de prioridade?
-```
-
-A resposta esperada deve apresentar:
-
-- Baixa;
-- Média;
-- Alta;
-- Crítica.
-
-### Pergunta 3
-
-```text
-Qual é o SLA em horas para um chamado crítico?
-```
-
-Essa informação **não existe na base de conhecimento**.
-
-Portanto, o chatbot deve informar:
-
-```text
-Essa informação não está disponível na base de conhecimento do NexFlow Desk. Por favor, abra um chamado com o suporte.
-```
-
-Depois disso, o chatbot deverá gerar o resumo das três perguntas e encerrar a conversa.
-
----
-
-## 16. Outros testes possíveis
-
-Também podem ser testadas perguntas como:
-
-```text
-Como altero a prioridade de um chamado?
-```
-
-```text
-Como acompanho um chamado?
-```
-
-```text
-Como faço a reabertura de um chamado?
-```
-
-E perguntas fora da base, por exemplo:
-
-```text
-Qual o preço do NexFlow Desk?
-```
-
-```text
-Qual é o telefone do suporte?
-```
-
-```text
-O NexFlow Desk possui integração com outro software?
-```
-
-Essas perguntas também devem resultar na mensagem de informação indisponível.
-
----
-
-## 17. Encerramento antecipado
-
-O usuário pode digitar:
-
-```text
-sair
-```
-
-A sessão será encerrada imediatamente, sem precisar chegar à terceira pergunta.
-
----
-
-## 18. Segurança da chave da API
+## 13. Segurança da chave da API
 
 Nunca faça commit do arquivo:
 
@@ -528,25 +437,7 @@ e nunca a chave verdadeira.
 
 ---
 
-## 19. Limitações do projeto
-
-Este projeto foi desenvolvido para demonstrar o conceito solicitado no trabalho acadêmico.
-
-A base de conhecimento é fixa e está diretamente no notebook. Não há:
-
-- banco de dados;
-- painel administrativo;
-- autenticação de usuários;
-- persistência entre sessões;
-- recuperação semântica/RAG;
-- consulta automática a documentos externos;
-- interface web dedicada.
-
-A conversa é mantida somente durante a execução atual do notebook.
-
----
-
-## 20. Resultado esperado
+## 14. Resultado esperado
 
 Ao executar corretamente o notebook, o sistema deverá:
 
@@ -559,42 +450,4 @@ Ao executar corretamente o notebook, o sistema deverá:
 7. permitir uma nova sessão quando a célula final for executada novamente.
 
 ---
-
-## 21. Resumo dos requisitos atendidos
-
-| Requisito | Implementação |
-|---|---|
-| Assunto de domínio específico | NexFlow Desk |
-| Relevância profissional/comercial | Serviço fictício de suporte gerenciado |
-| Personalidade do atendente | Lara, especialista e profissional |
-| Objetivo e tarefa | Atendimento baseado na base interna |
-| Conhecimento inserido no LLM | `SYSTEM_INSTRUCTION` |
-| Fonte de conhecimento fechada | Base de conhecimento fixa |
-| Regra contra invenção | Mensagem de indisponibilidade |
-| Provedor Google | Google Gemini |
-| Python / Google Colab | Notebook `.ipynb` |
-| `.env` | Chave e modelo configurados externamente |
-| `.env.example` | Modelo sem valores reais |
-| Três perguntas | Controle por `contador` |
-| Resumo após terceira resposta | Chamada específica para resumo |
-| Encerramento da conversa | Variável `encerrado` |
-| Nova sessão | Reinicialização das variáveis na célula final |
-
----
-
-## 22. Arquivos entregues
-
-```text
-Trabalho_Chatbot_IA.ipynb
-.env.example
-.gitignore
-requirements.txt
-README.md
-```
-
-O arquivo principal para execução é:
-
-```text
-Trabalho_Chatbot_IA.ipynb
-```
 
