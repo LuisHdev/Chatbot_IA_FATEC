@@ -1,5 +1,13 @@
 # Chatbot com Gemini — NexFlow Desk
 
+<p align="center">
+  <img src="assets/Banner.png" alt="NexFlow Desk - Chatbot Especialista em Suporte">
+</p>
+
+## Visão geral
+
+Este projeto implementa, em **Python no Google Colab**, um chatbot especialista...
+
 ## 1. Visão geral
 
 Este projeto implementa, em **Python no Google Colab**, um chatbot especialista para atendimento sobre um serviço fictício chamado **NexFlow Desk**.
